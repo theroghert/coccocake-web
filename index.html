@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoccoCake - Tartas Profesionales y Personalizadas</title>
+    <!-- Cargamos Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Usamos una fuente más elegante si está disponible */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- NUEVO: Clases para Animación en Scroll --- */
+        .fade-in-on-scroll {
+            opacity: 0;
+            transform: translateY(20px); /* Empieza 20px más abajo */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        /* Clase que añade JS cuando el elemento es visible */
+        .fade-in-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* --- Fin de Clases de Animación --- */
+    </style>
+</head>
+<body class="bg-pink-50 text-gray-800">
+
+    <!-- Header / Navbar -->
+    <header class="shadow-md bg-white sticky top-0 z-50">
+        <!-- Contenedor del Nav -->
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center relative">
+            <h1 class="text-3xl font-bold text-pink-600">CoccoCake</h1>
+
+            <!-- Contenedor para Menú Desktop y Botón Móvil -->
+            <div class="flex items-center">
+                <!-- Menú Desktop: Oculto en móvil, visible en md y más grande -->
+                <div class="space-x-6 hidden md:flex items-center">
+                    <a href="#inicio" class="text-gray-600 hover:text-pink-600">Inicio</a>
+                    <a href="#galeria" class="text-gray-600 hover:text-pink-600">Galería</a>
+                    <a href="#nosotros" class="text-gray-600 hover:text-pink-600">Sobre Nosotros</a>
+                    <a href="#contacto" class="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition duration-300">Contacto</a>
+                </div>
+            
+                <!-- Botón de Menú Móvil: Visible solo en móvil -->
+                <button id="mobile-menu-button" class="md:hidden p-2 text-gray-600 hover:text-pink-600" aria-label="Abrir menú">
+                    <!-- Icono de Hamburguesa -->
+                    <svg id="menu-icon-open" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    <!-- Icono de Cerrar (X) - Oculto por defecto -->
+                    <svg id="menu-icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menú Desplegable Móvil: Oculto por defecto, se muestra con JS -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-2">
+                <a href="#inicio" class="block text-center py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600">Inicio</a>
+                <a href="#galeria" class="block text-center py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600">Galería</a>
+                <a href="#nosotros" class="block text-center py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600">Sobre Nosotros</a>
+                <a href="#contacto" class="block text-center py-3 text-gray-700 hover:bg-pink-50 hover:text-pink-600">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <main id="inicio" class="container mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+        <!-- Añadida clase para animar -->
+        <div class="text-center md:text-left fade-in-on-scroll">
+            <h2 class="text-5xl md:text-6xl font-bold text-gray-900 leading-tight">Sabor y Arte en Cada Tarta</h2>
+            <p class="mt-6 text-lg text-gray-700">Años de experiencia creando tartas personalizadas y profesionales para tus momentos más especiales. El sabor que recuerdas, el arte que mereces.</p>
+            <a href="#galeria" class="mt-8 inline-block bg-pink-500 text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-pink-600 transition duration-300 shadow-lg">Ver Nuestras Creaciones</a>
+        </div>
+        <!-- Añadida clase para animar -->
+        <div class="fade-in-on-scroll">
+            <!-- Placeholder para una imagen de una tarta espectacular -->
+            
+            <div class="aspect-w-1 aspect-h-1 bg-white rounded-lg shadow-2xl overflow-hidden">
+                <img src="https://placehold.co/600x600/fbcfe8/db2777?text=Tu+Mejor+Tarta+Aqu%C3%AD" alt="Tarta personalizada de CoccoCake" class="object-cover w-full h-full">
+            </div>
+        </div>
+    </main>
+
+    <!-- Sección Galería (Placeholder) -->
+    <section id="galeria" class="bg-white py-20">
+        <div class="container mx-auto px-6">
+            <!-- Añadida clase para animar -->
+            <h3 class="text-4xl font-bold text-center mb-12 fade-in-on-scroll">Nuestra Galería</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Imagen de Galería 1 - Añadida clase para animar -->
+                <div class="bg-pink-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 fade-in-on-scroll">
+                    <img src="https://placehold.co/400x300/fbcfe8/db2777?text=Tarta+de+Boda" alt="Tarta de Boda" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-2">Tartas de Boda</h4>
+                        <p class="text-gray-700">Diseños elegantes para tu gran día.</p>
+                    </div>
+                </div>
+                <!-- Imagen de Galería 2 - Añadida clase para animar -->
+                <div class="bg-pink-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 fade-in-on-scroll" style="transition-delay: 100ms;">
+                    <img src="https://placehold.co/400x300/fbcfe8/db2777?text=Tarta+Infantil" alt="Tarta Infantil" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-2">Tartas Infantiles</h4>
+                        <p class="text-gray-700">Fantasía y sabor para los peques.</p>
+                    </div>
+                </div>
+                <!-- Imagen de Galería 3 - Añadida clase para animar -->
+                <div class="bg-pink-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300 fade-in-on-scroll" style="transition-delay: 200ms;">
+                    <img src="https://placehold.co/400x300/fbcfe8/db2777?text=Eventos" alt="Tarta de Eventos" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-2">Eventos Especiales</h4>
+                        <p class="text-gray-700">Corporativas, aniversarios y más.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-pink-100 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold text-white">CoccoCake</h3>
+            <p class="mt-4">Horneando sueños desde 2010</p>
+            <div class="mt-6">
+                <a href="#" class="text-pink-100 hover:text-white mx-3">Instagram</a>
+                <a href="#" class="text-pink-100 hover:text-white mx-3">Facebook</a>
+                <a href="#" class="text-pink-100 hover:text-white mx-3">Whatsapp</a>
+            </div>
+            <p class="mt-8 text-sm text-gray-400">&copy; 2025 CoccoCake. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- --- NUEVO: Bloque de JavaScript --- -->
+    <script>
+        // Espera a que todo el contenido del HTML esté cargado
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Lógica para el Menú Móvil ---
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+
+            menuButton.addEventListener('click', () => {
+                // Muestra u oculta el menú
+                mobileMenu.classList.toggle('hidden');
+                // Cambia entre el icono de hamburguesa y el de 'X'
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });
+
+            // --- Lógica para Animaciones al Hacer Scroll ---
+            
+            // Opciones para el IntersectionObserver:
+            // threshold: 0.1 significa que la animación se dispara
+            // cuando al menos el 10% del elemento está visible.
+            const observerOptions = {
+                root: null, // Observa en relación al viewport
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            // Función que se ejecuta cuando un elemento observado entra o sale
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    // Si el elemento está entrando en la pantalla
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Deja de observar este elemento una vez que ya es visible
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            // Crea el observador
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            // Selecciona todos los elementos que queremos animar
+            const elementsToAnimate = document.querySelectorAll('.fade-in-on-scroll');
+            
+            // Le dice al observador que vigile cada uno de esos elementos
+            elementsToAnimate.forEach(el => observer.observe(el));
+
+        });
+    </script>
+    <!-- --- Fin del Bloque de JavaScript --- -->
+
+</body>
+</html>
+
